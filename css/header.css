@@ -1,8 +1,19 @@
 body
 {
   margin: 0;
+  background-color: #fff8f5;
 }
 #header
 {
-  background-color: blue;
+  background-color: #89c4f4;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+  padding: 10px;
+}
+#header-title
+{
+  margin-top: 0;
+}
+#header-tagline
+{
+  margin-bottom: 0;
 }
