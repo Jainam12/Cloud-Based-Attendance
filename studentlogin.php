@@ -14,7 +14,7 @@
  </head>
  <body>
   <div id="header" class="clearfix">
-    <h1>Netaji Subhas Institute of Technology</h1>
+    <h1>Shah and Anchor Kutchhi Engineering College</h1>
     <h3>Attendance Tracker</h3>	
   </div>
  <div class="container">
