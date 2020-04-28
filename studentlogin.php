@@ -14,8 +14,8 @@
  </head>
  <body>
   <div id="header" class="clearfix">
-    <h1>Shah and anchor kutchhi engineering College</h1>
-    <h3>Attendance Tracker</h3> 
+    <h1>Shah and Anchor Kutchhi Engineering College</h1>
+    <h3>Attendance Tracker</h3>	
   </div>
  <div class="container">
   <div id="output"></div>
@@ -29,7 +29,7 @@
     <div class="form-group">
       <label>Section</label>
       <select name="section" class="form-control">
-      <option>1</option><option>2</option><option>3</option>  
+      <option>1</option><option>2</option><option>3</option>	
     </select>
     </div>
     <div class="form-group">
