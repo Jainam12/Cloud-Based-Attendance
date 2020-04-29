@@ -21,26 +21,21 @@
   <div id="output"></div>
   <form id="getAttendance">
     <div class="form-group">
-      <label>Year of course</label>
+      <label>Year</label>
       <select name="year" class="form-control">
-        <?php foreach(range(date('Y',time()),1983) as $r) echo '<option>'.$r.'</option>'; ?>
+      <option>1</option><option>2</option><option>3</option><option>4</option> 
       </select>
     </div>
     <div class="form-group">
-      <label>Section</label>
+      <label>Class</label>
       <select name="section" class="form-control">
-      <option>1</option><option>2</option><option>3</option>	
+      <option>1</option><option>2</option><option>3</option>
+      <option>4</option><option>5</option><option>6</option>
     </select>
     </div>
     <div class="form-group">
-      <label>Subject Code of Course</label>
-      <input type="text" class="form-control" name="code" placeholder="Eg - COE-216">
-      <span class="help-block">DDD-NNN where D : Department , N : Number</span>
-    </div>
-    <div class="form-group">
       <label>Roll Number</label>
-      <input type="text" class="form-control" name="roll" placeholder="Eg - 262/CO/12">
-      <span class="help-block">NNN/DD/YY where N : Number, D : Department , Y : Year</span>
+      <input type="text" class="form-control" name="roll" placeholder="">
     </div>
     <button class="btn btn-primary">Get Results</button>
   </form>
