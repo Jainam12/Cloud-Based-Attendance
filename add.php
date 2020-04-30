@@ -21,7 +21,7 @@
 			<div class="card-header">
 				<h2>
 					<a class="btn btn-success" href="add.php">Add Employee</a>
-					<a class="btn btn-info float-right" href="index.php">Back</a>
+					<a class="btn btn-dark float-right" href="index.php">Back</a>
 				</h2>
 			</div>
 

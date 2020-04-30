@@ -22,6 +22,18 @@ class Employee{
 		return $result;
 	}
 
+	
+	public function getEmployeeAttendance(){
+		$query = "SELECT name,present.count_p,total.count_t
+		FROM
+		(SELECT roll,name FROM tbl_employee) AS employee,
+		(SELECT roll, COUNT(attend) AS count_P FROM tbl_attendance WHERE attend='present' GROUP BY roll) AS present,
+		(SELECT roll, COUNT(att_time) AS count_t FROM tbl_attendance GROUP BY roll) AS total
+		WHERE employee.roll=present.roll and employee.roll=total.roll";
+		$result = $this->db->select($query);
+		return $result;
+	}
+
 	public function insertEmployee($name, $roll){
 		$name = $this->fm->validation($name);
 		$roll = $this->fm->validation($roll);

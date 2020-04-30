@@ -22,7 +22,8 @@
 			<div class="card-header">
 				<h2>
 					<a class="btn btn-success" href="add.php">Add Employee</a>
-					<a class="btn btn-info float-right" href="datewise_view.php">View All</a>
+					<a class="btn btn-info float-right" href="employeewise_view.php" style="margin-left:10px">View Employeewise Attendance</a>
+					<a class="btn btn-info float-right" href="datewise_view.php" style="margin-left:10px">View Datewise Attendance</a>
 				</h2>
 			</div>
 

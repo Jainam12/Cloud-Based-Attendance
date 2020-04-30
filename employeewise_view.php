@@ -15,23 +15,23 @@
 				<h2>
 					<a class="btn btn-success" href="add.php">Add Employee</a>
 					<a class="btn btn-dark float-right" href="index.php" style="margin-left:10px">Take Attendance</a>
-					<a class="btn btn-info float-right" href="employeewise_view.php" style="margin-left:10px">View Employeewise Attendance</a>
+					<a class="btn btn-info float-right" href="datewise_view.php" style="margin-left:10px">View Datewise Attendance</a>
 				</h2>
 			</div>
 
 			<div class="card-body">
       <div class="card bg-light text-center mb-3">
-					<h4 class="m-0 py-3"><strong>Datewise Attendance</strong></h4>
+					<h4 class="m-0 py-3"><strong>Employeewise Attendance</strong></h4>
 				</div>
 				<form action="" method="post">
 					<table class="table table-striped">
 						<tr>
 							<th width="30%">S/L</th>
-							<th width="50%">Attendance Date</th>
-							<th width="20%">Action</th>
+							<th width="50%">Employee Name</th>
+							<th width="20%">Attencance Ratio (Present/Total)</th>
 						</tr>
 <?php 
-	$getdate = $emp->getDateList();
+	$getdate = $emp->getEmployeeAttendance();
 	if ($getdate) {
 		$i = 0;
 		while ($value = $getdate->fetch_assoc()) {
@@ -39,10 +39,8 @@
 ?>
 						<tr>
 							<td><?php echo $i; ?></td>
-							<td><?php echo $value['att_time']; ?></td>
-							<td>
-							<a class="btn btn-primary" href="date_view.php?dt=<?php echo $value['att_time']; ?>">View</a>
-							</td>
+							<td><?php echo $value['name']; ?></td>
+							<td><?php echo $value['count_p']."/".$value['count_t']; ?></td>
 						</tr>
 <?php } } ?>
 					</table>
