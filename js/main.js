@@ -4,7 +4,7 @@ $(document).ready(function(){
 		$(':radio').each(function(){
 			name = $(this).attr('name');
 			if (roll && !$(':radio[name="' + name + '"]:checked').length) {
-				// alert(name + " Roll Missing !");
+				// alert(name + " ID Missing !");
 				$('.alert').show();
 				roll = false;
 			}
