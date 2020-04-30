@@ -13,7 +13,7 @@
 		<div class="card">
 			<div class="card-header">
 				<h2>
-					<a class="btn btn-success" href="add.php">Add Student</a>
+					<a class="btn btn-success" href="add.php">Add Employee</a>
 					<a class="btn btn-info float-right" href="index.php">Take Addendance</a>
 				</h2>
 			</div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Student/Employee Attendance System PHP</title>
+	<title>Employee Attendance System</title>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -12,6 +12,6 @@
 <body>
 	<div class="container mb-3">
 		<div class="card card-body bg-light text-center">
-			<h2>Employee/Student Attendance(Roll Call) System PHP</h2>
+			<h2>Employee Attendance System</h2>
 		</div>
 	</div>

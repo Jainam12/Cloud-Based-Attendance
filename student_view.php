@@ -17,11 +17,11 @@
 		echo $attattend;
 	}
 ?>
-<div class='alert alert-danger' style="display: none;"><strong>Error !</strong> Student Roll Missing !</div>
+<div class='alert alert-danger' style="display: none;"><strong>Error !</strong> Employee Roll Missing !</div>
 		<div class="card">
 			<div class="card-header">
 				<h2>
-					<a class="btn btn-success" href="add.php">Add Student</a>
+					<a class="btn btn-success" href="add.php">Add Employee</a>
 					<a class="btn btn-info float-right" href="date_view.php">Back</a>
 				</h2>
 			</div>
@@ -34,8 +34,8 @@
 					<table class="table table-striped">
 						<tr>
 							<th width="25%">S/L</th>
-							<th width="25%">Student Name</th>
-							<th width="25%">Student Roll</th>
+							<th width="25%">Employee Name</th>
+							<th width="25%">Employee ID</th>
 							<th width="25%">Attendance</th>
 						</tr>
 <?php 

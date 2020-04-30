@@ -20,7 +20,7 @@
 		<div class="card">
 			<div class="card-header">
 				<h2>
-					<a class="btn btn-success" href="add.php">Add Student</a>
+					<a class="btn btn-success" href="add.php">Add Employee</a>
 					<a class="btn btn-info float-right" href="index.php">Back</a>
 				</h2>
 			</div>
@@ -28,12 +28,12 @@
 			<div class="card-body">
 				<form action="" method="post">
 					<div class="form-group">
-						<label for="name">Student Name</label>
+						<label for="name">Employee Name</label>
 						<input type="text" class="form-control" name="name" id="name" required="">
 					</div>
 
 					<div class="form-group">
-						<label for="roll">Student Roll</label>
+						<label for="roll">Employee ID</label>
 						<input type="text" class="form-control" name="roll" id="roll" required="">
 					</div>
 
