@@ -29,7 +29,7 @@
 							<th width="15%">S/L</th>
 							<th width="20%">Employee ID</th>
 							<th width="30%">Employee Name</th>
-							<th width="20%">Attencance Ratio (Present/Total)</th>
+							<th width="20%">Attendance Ratio (Present/Total)</th>
 							<th width="15%">Action</th>
 						<!---
 							<th width="15%">S/L</th>

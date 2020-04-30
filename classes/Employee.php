@@ -24,12 +24,12 @@ class Employee{
 
 	
 	public function getEmployeeAttendanceCount(){
-		$query = "SELECT employee.roll,name,present.count_p,total.count_t
-		FROM
-		(SELECT roll,name FROM tbl_employee) AS employee,
-		(SELECT roll, COUNT(attend) AS count_P FROM tbl_attendance WHERE attend='present' GROUP BY roll) AS present,
-		(SELECT roll, COUNT(att_time) AS count_t FROM tbl_attendance GROUP BY roll) AS total
-		WHERE employee.roll=present.roll and employee.roll=total.roll";
+		$query = "SELECT employee.roll,name,IFNULL(present.count_p,0) AS count_p,IFNULL(total.count_t,0) AS count_t
+		FROM (SELECT roll,name FROM tbl_employee) AS employee
+		LEFT JOIN (SELECT roll, COUNT(attend) AS count_P FROM tbl_attendance WHERE attend='present' GROUP BY roll) AS present
+		ON employee.roll=present.roll
+		LEFT JOIN (SELECT roll, COUNT(att_time) AS count_t FROM tbl_attendance GROUP BY roll) AS total
+		ON employee.roll=total.roll";
 		$result = $this->db->select($query);
 		return $result;
 	}
@@ -56,14 +56,27 @@ class Employee{
 			$msg = "<div class='alert alert-danger'><strong>Error !</strong> Field must not be empty !</div>";
 			return $msg;
 		} else {
-			$emp_query = "INSERT INTO tbl_employee(name, roll) VALUES('$name', '$roll')";
-			$emp_insert = $this->db->insert($emp_query);
-			if ($emp_insert) {
-				$msg = "<div class='alert alert-success'><strong>Success !</strong> Employee data inserted successfully !</div>";
+			$emp_exist_query = "SELECT * FROM tbl_employee WHERE roll='$roll'";
+			$emp_exist = $this->db->select($emp_exist_query);
+			if ($emp_exist) {
+				echo($emp_exist);
+				$msg = "<div class='alert alert-danger'>Employee ID already exists !</div>";
 				return $msg;
-			} else {
+			}
+			else
+			{
+				$emp_query = "INSERT INTO tbl_employee(name, roll) VALUES('$name', '$roll')";
+				$emp_insert = $this->db->insert($emp_query);
+				if ($emp_insert)
+				{
+					$msg = "<div class='alert alert-success'><strong>Success !</strong> Employee data inserted successfully !</div>";
+					return $msg;
+				}
+				else
+				{
 				$msg = "<div class='alert alert-danger'><strong>Error !</strong> Employee data not inserted !</div>";
 				return $msg;
+				}
 			}
 		}
 	}
