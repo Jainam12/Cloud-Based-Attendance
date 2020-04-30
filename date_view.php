@@ -1,7 +1,7 @@
 <?php 
 	include "inc/header.php"; 
-	include "classes/Student.php"; 
-	$stu = new Student();
+	include "classes/Employee.php"; 
+	$emp = new Employee();
 ?>
 
 	<div class="container">
@@ -27,7 +27,7 @@
 							<th width="20%">Action</th>
 						</tr>
 <?php 
-	$getdate = $stu->getDateList();
+	$getdate = $emp->getDateList();
 	if ($getdate) {
 		$i = 0;
 		while ($value = $getdate->fetch_assoc()) {
@@ -37,7 +37,7 @@
 							<td><?php echo $i; ?></td>
 							<td><?php echo $value['att_time']; ?></td>
 							<td>
-							<a class="btn btn-primary" href="student_view.php?dt=<?php echo $value['att_time']; ?>">View</a>
+							<a class="btn btn-primary" href="employee_view.php?dt=<?php echo $value['att_time']; ?>">View</a>
 							</td>
 						</tr>
 <?php } } ?>

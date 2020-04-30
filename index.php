@@ -1,14 +1,14 @@
 <?php 
 	include "inc/header.php"; 
-	include "classes/Student.php"; 
-	$stu = new Student();
+	include "classes/Employee.php"; 
+	$emp = new Employee();
 ?>
 <?php 
 	error_reporting(0);
 	$cur_date = date('Y-m-d');
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$attend = $_POST['attend'];
-		$insertattend = $stu->insertAttendance($attend);
+		$insertattend = $emp->insertAttendance($attend);
 	}
 ?>
 	<div class="container">
@@ -39,10 +39,10 @@
 							<th width="25%">Attendance</th>
 						</tr>
 <?php 
-	$getstudent = $stu->getStudents();
-	if ($getstudent) {
+	$getemployee = $emp->getEmployees();
+	if ($getemployee) {
 		$i = 0;
-		while ($value = $getstudent->fetch_assoc()) {
+		while ($value = $getemployee->fetch_assoc()) {
 			$i++;
 ?>
 						<tr>

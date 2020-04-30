@@ -1,13 +1,13 @@
 <?php 
 	include "inc/header.php"; 
-	include "classes/Student.php"; 
-	$stu = new Student();
+	include "classes/Employee.php"; 
+	$emp = new Employee();
 ?>
 <?php 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$name = $_POST['name'];
 		$roll = $_POST['roll'];
-		$insertdata = $stu->insertStudent($name, $roll);
+		$insertdata = $emp->insertEmployee($name, $roll);
 	}
 ?>
 

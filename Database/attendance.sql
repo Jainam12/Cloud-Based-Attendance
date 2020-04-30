@@ -58,20 +58,20 @@ INSERT INTO `tbl_attendance` (`id`, `roll`, `attend`, `att_time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_student`
+-- Table structure for table `tbl_employee`
 --
 
-CREATE TABLE `tbl_student` (
+CREATE TABLE `tbl_employee` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `roll` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_student`
+-- Dumping data for table `tbl_employee`
 --
 
-INSERT INTO `tbl_student` (`id`, `name`, `roll`) VALUES
+INSERT INTO `tbl_employee` (`id`, `name`, `roll`) VALUES
 (1, 'Jainam Doshi', 'ML-01'),
 (2, 'Riya Jakhariya', 'WD-01'),
 (3, 'Rudresh Dongre', 'WD-02'),
@@ -91,9 +91,9 @@ ALTER TABLE `tbl_attendance`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_student`
+-- Indexes for table `tbl_employee`
 --
-ALTER TABLE `tbl_student`
+ALTER TABLE `tbl_employee`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -107,9 +107,9 @@ ALTER TABLE `tbl_attendance`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `tbl_student`
+-- AUTO_INCREMENT for table `tbl_employee`
 --
-ALTER TABLE `tbl_student`
+ALTER TABLE `tbl_employee`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 

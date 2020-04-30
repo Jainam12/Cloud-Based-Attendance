@@ -5,9 +5,9 @@
 ?>
 <?php
 /**
- * Student Class
+ * Employee Class
  */
-class Student{
+class Employee{
 	private $db;
 	private $fm;
 	
@@ -16,13 +16,13 @@ class Student{
 		$this->fm = new Format();
 	}
 
-	public function getStudents(){
-		$query = "SELECT * FROM tbl_student";
+	public function getEmployees(){
+		$query = "SELECT * FROM tbl_employee";
 		$result = $this->db->select($query);
 		return $result;
 	}
 
-	public function insertStudent($name, $roll){
+	public function insertEmployee($name, $roll){
 		$name = $this->fm->validation($name);
 		$roll = $this->fm->validation($roll);
 
@@ -33,9 +33,9 @@ class Student{
 			$msg = "<div class='alert alert-danger'><strong>Error !</strong> Field must not be empty !</div>";
 			return $msg;
 		} else {
-			$stu_query = "INSERT INTO tbl_student(name, roll) VALUES('$name', '$roll')";
-			$stu_insert = $this->db->insert($stu_query);
-			if ($stu_insert) {
+			$emp_query = "INSERT INTO tbl_employee(name, roll) VALUES('$name', '$roll')";
+			$emp_insert = $this->db->insert($emp_query);
+			if ($emp_insert) {
 				$msg = "<div class='alert alert-success'><strong>Success !</strong> Employee data inserted successfully !</div>";
 				return $msg;
 			} else {
@@ -59,11 +59,11 @@ class Student{
 
 		foreach ($attend as $atn_key => $atn_value) {
 			if ($atn_value == "present") {
-				$stu_query = "INSERT INTO tbl_attendance(roll, attend, att_time) VALUES('$atn_key', 'present', now())";
-				$data_insert = $this->db->insert($stu_query);
+				$emp_query = "INSERT INTO tbl_attendance(roll, attend, att_time) VALUES('$atn_key', 'present', now())";
+				$data_insert = $this->db->insert($emp_query);
 			} elseif ($atn_value == "absent") {
-				$stu_query = "INSERT INTO tbl_attendance(roll, attend, att_time) VALUES('$atn_key', 'absent', now())";
-				$data_insert = $this->db->insert($stu_query);
+				$emp_query = "INSERT INTO tbl_attendance(roll, attend, att_time) VALUES('$atn_key', 'absent', now())";
+				$data_insert = $this->db->insert($emp_query);
 			}
 		}
 
@@ -86,10 +86,10 @@ class Student{
 		$date = $this->fm->validation($dt);
 		$date = mysqli_real_escape_string($this->db->link, $date);
 
-		$query = "SELECT tbl_student.name, tbl_attendance.*
-				FROM tbl_student
+		$query = "SELECT tbl_employee.name, tbl_attendance.*
+				FROM tbl_employee
 				INNER JOIN tbl_attendance
-				ON tbl_student.roll = tbl_attendance.roll
+				ON tbl_employee.roll = tbl_attendance.roll
 				WHERE att_time = '$date'";
 		$result = $this->db->select($query);
 		return $result;
