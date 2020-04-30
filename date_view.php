@@ -51,8 +51,8 @@
 	<td><?php echo $value['name']; ?></td>
 	<td><?php echo $value['roll']; ?></td>
 	<td>
-		<input type="radio" name="attend[<?php echo $value['roll']; ?>]" value="present" <?php if($value['attend'] == "present") {echo "checked";} ?>>P
-		<input type="radio" name="attend[<?php echo $value['roll']; ?>]" value="absent" <?php if($value['attend'] == "absent") {echo "checked";} ?>>A
+		<input type="radio" name="attend[<?php echo $value['roll']; ?>]" value="Present" <?php if($value['attend'] == "Present") {echo "checked";} ?>>P
+		<input type="radio" name="attend[<?php echo $value['roll']; ?>]" value="Absent" <?php if($value['attend'] == "Absent") {echo "checked";} ?>>A
 	</td>
 </tr>
 <?php } } ?>

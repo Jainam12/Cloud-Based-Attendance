@@ -26,12 +26,20 @@
 				<form action="" method="post">
 					<table class="table table-striped">
 						<tr>
-							<th width="30%">S/L</th>
-							<th width="50%">Employee Name</th>
+							<th width="15%">S/L</th>
+							<th width="20%">Employee ID</th>
+							<th width="30%">Employee Name</th>
 							<th width="20%">Attencance Ratio (Present/Total)</th>
+							<th width="15%">Action</th>
+						<!---
+							<th width="15%">S/L</th>
+							<th width="45%">Employee Name</th>
+							<th width="20%">Total Present Days</th>
+							<th width="20%">Total Working Days</th>
+						--->
 						</tr>
 <?php 
-	$getdate = $emp->getEmployeeAttendance();
+	$getdate = $emp->getEmployeeAttendanceCount();
 	if ($getdate) {
 		$i = 0;
 		while ($value = $getdate->fetch_assoc()) {
@@ -39,8 +47,12 @@
 ?>
 						<tr>
 							<td><?php echo $i; ?></td>
+							<td><?php echo $value['roll']; ?></td>
 							<td><?php echo $value['name']; ?></td>
 							<td><?php echo $value['count_p']."/".$value['count_t']; ?></td>
+							<td>
+							<a class="btn btn-primary" href="employee_view.php?name=<?php echo $value['name']; ?>&roll=<?php echo $value['roll']; ?>">View Record</a>
+							</td>
 						</tr>
 <?php } } ?>
 					</table>

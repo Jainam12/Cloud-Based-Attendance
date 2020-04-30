@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2020 at 04:51 PM
+-- Generation Time: Apr 30, 2020 at 11:46 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -40,20 +40,34 @@ CREATE TABLE `tbl_attendance` (
 --
 
 INSERT INTO `tbl_attendance` (`id`, `roll`, `attend`, `att_time`) VALUES
-(1, 'ML-01', 'present', '2020-03-28'),
-(2, 'WD-01', 'present', '2020-03-28'),
-(3, 'WD-02', 'present', '2020-03-28'),
-(4, 'WD-03', 'present', '2020-03-28'),
-(5, 'ML-02', 'present', '2020-03-28'),
-(6, 'NLP-01', 'present', '2020-03-28'),
-(7, 'ML-03', 'present', '2020-03-28'),
-(8, 'ML-01', 'present', '2020-03-29'),
-(9, 'WD-01', 'present', '2020-03-29'),
-(10, 'WD-02', 'present', '2020-03-29'),
-(11, 'WD-03', 'present', '2020-03-29'),
-(12, 'ML-02', 'present', '2020-03-29'),
-(13, 'NLP-01', 'present', '2020-03-29'),
-(14, 'ML-03', 'present', '2020-03-29');
+(1, 'ML-01', 'Present', '2020-04-28'),
+(2, 'WD-01', 'Present', '2020-04-28'),
+(3, 'WD-02', 'Present', '2020-04-28'),
+(4, 'WD-03', 'Absent', '2020-04-28'),
+(5, 'ML-02', 'Absent', '2020-04-28'),
+(6, 'NLP-01', 'Present', '2020-04-28'),
+(7, 'ML-03', 'Present', '2020-04-28'),
+(8, 'ML-01', 'Present', '2020-04-29'),
+(9, 'WD-01', 'Present', '2020-04-29'),
+(10, 'WD-02', 'Present', '2020-04-29'),
+(11, 'WD-03', 'Present', '2020-04-29'),
+(12, 'ML-02', 'Present', '2020-04-29'),
+(13, 'NLP-01', 'Present', '2020-04-29'),
+(14, 'ML-03', 'Present', '2020-04-29'),
+(15, 'ML-01', 'Present', '2020-04-30'),
+(16, 'WD-01', 'Present', '2020-04-30'),
+(17, 'WD-02', 'Absent', '2020-04-30'),
+(18, 'WD-03', 'Absent', '2020-04-30'),
+(19, 'ML-02', 'Present', '2020-04-30'),
+(20, 'NLP-01', 'Absent', '2020-04-30'),
+(21, 'ML-03', 'Absent', '2020-05-01'),
+(22, 'ML-01', 'Present', '2020-05-01'),
+(23, 'WD-01', 'Present', '2020-05-01'),
+(24, 'WD-02', 'Absent', '2020-05-01'),
+(25, 'WD-03', 'Present', '2020-05-01'),
+(26, 'ML-02', 'Present', '2020-05-01'),
+(27, 'NLP-01', 'Present', '2020-05-01'),
+(28, 'ML-03', 'Present', '2020-05-01');
 
 -- --------------------------------------------------------
 
@@ -104,7 +118,7 @@ ALTER TABLE `tbl_employee`
 -- AUTO_INCREMENT for table `tbl_attendance`
 --
 ALTER TABLE `tbl_attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_employee`

@@ -23,13 +23,24 @@ class Employee{
 	}
 
 	
-	public function getEmployeeAttendance(){
-		$query = "SELECT name,present.count_p,total.count_t
+	public function getEmployeeAttendanceCount(){
+		$query = "SELECT employee.roll,name,present.count_p,total.count_t
 		FROM
 		(SELECT roll,name FROM tbl_employee) AS employee,
 		(SELECT roll, COUNT(attend) AS count_P FROM tbl_attendance WHERE attend='present' GROUP BY roll) AS present,
 		(SELECT roll, COUNT(att_time) AS count_t FROM tbl_attendance GROUP BY roll) AS total
 		WHERE employee.roll=present.roll and employee.roll=total.roll";
+		$result = $this->db->select($query);
+		return $result;
+	}
+
+	public function getEmployeeAttendance($roll){
+		$roll = $this->fm->validation($roll);
+		$roll = mysqli_real_escape_string($this->db->link, $roll);
+
+		$query = "SELECT tbl_attendance.att_time,tbl_attendance.attend
+				FROM tbl_employee,tbl_attendance
+				WHERE tbl_employee.roll = tbl_attendance.roll and tbl_employee.roll = '$roll'";
 		$result = $this->db->select($query);
 		return $result;
 	}
@@ -70,11 +81,11 @@ class Employee{
 		}
 
 		foreach ($attend as $atn_key => $atn_value) {
-			if ($atn_value == "present") {
-				$emp_query = "INSERT INTO tbl_attendance(roll, attend, att_time) VALUES('$atn_key', 'present', now())";
+			if ($atn_value == "Present") {
+				$emp_query = "INSERT INTO tbl_attendance(roll, attend, att_time) VALUES('$atn_key', 'Present', now())";
 				$data_insert = $this->db->insert($emp_query);
-			} elseif ($atn_value == "absent") {
-				$emp_query = "INSERT INTO tbl_attendance(roll, attend, att_time) VALUES('$atn_key', 'absent', now())";
+			} elseif ($atn_value == "Absent") {
+				$emp_query = "INSERT INTO tbl_attendance(roll, attend, att_time) VALUES('$atn_key', 'Absent', now())";
 				$data_insert = $this->db->insert($emp_query);
 			}
 		}
@@ -109,14 +120,14 @@ class Employee{
 
 	public function updateAttendance($dt, $attend){
 		foreach ($attend as $atn_key => $atn_value) {
-			if ($atn_value == "present") {
+			if ($atn_value == "Present") {
 				$query = "UPDATE tbl_attendance
-						SET attend = 'present'
+						SET attend = 'Present'
 						WHERE roll = '".$atn_key."' AND att_time = '".$dt."'";
 				$data_update = $this->db->update($query);
-			} elseif ($atn_value == "absent") {
+			} elseif ($atn_value == "Absent") {
 				$query = "UPDATE tbl_attendance
-						SET attend = 'absent'
+						SET attend = 'Absent'
 						WHERE roll = '".$atn_key."' AND att_time = '".$dt."'";
 				$data_update = $this->db->update($query);
 			}
