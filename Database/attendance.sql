@@ -60,7 +60,7 @@ INSERT INTO `tbl_attendance` (`id`, `roll`, `attend`, `att_time`) VALUES
 (18, 'WD-03', 'Absent', '2020-04-30'),
 (19, 'ML-02', 'Present', '2020-04-30'),
 (20, 'NLP-01', 'Absent', '2020-04-30'),
-(21, 'ML-03', 'Absent', '2020-05-01'),
+(21, 'ML-03', 'Absent', '2020-04-30'),
 (22, 'ML-01', 'Present', '2020-05-01'),
 (23, 'WD-01', 'Present', '2020-05-01'),
 (24, 'WD-02', 'Absent', '2020-05-01'),
