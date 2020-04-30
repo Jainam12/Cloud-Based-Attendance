@@ -35,10 +35,6 @@ class Student{
 		} else {
 			$stu_query = "INSERT INTO tbl_student(name, roll) VALUES('$name', '$roll')";
 			$stu_insert = $this->db->insert($stu_query);
-
-			$att_query = "INSERT INTO tbl_attendance(roll) VALUES('$roll')";
-			$stu_insert = $this->db->insert($att_query);
-
 			if ($stu_insert) {
 				$msg = "<div class='alert alert-success'><strong>Success !</strong> Employee data inserted successfully !</div>";
 				return $msg;
