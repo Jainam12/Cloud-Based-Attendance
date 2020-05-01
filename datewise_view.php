@@ -31,7 +31,6 @@
 							<th width="20%">Action</th>
 						</tr>
 <?php 
-echo('1');
 	$getdate = $emp->getDateList();
 	if ($getdate) {
 		$i = 0;
