@@ -41,6 +41,7 @@
 							<th width="25%">Attendance</th>
 						</tr>
 <?php 
+ech0('1');
 	$getemployee = $emp->getEmployees();
 	if ($getemployee) {
 		$i = 0;
