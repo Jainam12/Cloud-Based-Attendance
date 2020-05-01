@@ -17,11 +17,9 @@ class Employee{
 	}
 
 	public function getEmployees(){
-		echo('2');
 		$query = "SELECT * FROM tbl_employee";
 		$result = $this->db->select($query);
 		return $result;
-		echo('3');
 	}
 
 	
