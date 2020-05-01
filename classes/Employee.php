@@ -59,7 +59,6 @@ class Employee{
 			$emp_exist_query = "SELECT * FROM tbl_employee WHERE roll='$roll'";
 			$emp_exist = $this->db->select($emp_exist_query);
 			if ($emp_exist) {
-				echo($emp_exist);
 				$msg = "<div class='alert alert-danger'>Employee ID already exists !</div>";
 				return $msg;
 			}
