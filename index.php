@@ -52,8 +52,8 @@
 							<td><?php echo $value['name']; ?></td>
 							<td><?php echo $value['roll']; ?></td>
 							<td>
-								<input type="radio" name="attend[<?php echo $value['roll']; ?>]" value="present">P
-								<input type="radio" name="attend[<?php echo $value['roll']; ?>]" value="absent">A
+								<input type="radio" name="attend[<?php echo $value['roll']; ?>]" value="Present">P
+								<input type="radio" name="attend[<?php echo $value['roll']; ?>]" value="Absent">A
 							</td>
 						</tr>
 <?php } } ?>
